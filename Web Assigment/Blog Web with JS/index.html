@@ -13,7 +13,7 @@
 
 <body>
 
-  <nav>
+  <nav id="navbar">
 
     <ul>
       <li><a href="index.html">HOME</a></li>
@@ -97,7 +97,7 @@
 
   <div class="blogCont" id="blogContent">
     <div class="blogCont1">
-      <h1>Title</h1>
+      <h1></h1>
       <hr>
       <br>
       <p></p>
@@ -130,10 +130,6 @@
 
     function closePopup() {
       document.getElementById("overlay1").style.display = "none";
-    }
-
-    function showContent() {
-      document.getElementById("showContent").style.display = "block";
     }
 
     //Functions for posting blogs
@@ -172,6 +168,16 @@
       content1.appendChild(newDiv);
 
       form.reset();
+    }
+
+    function showContent() {
+      document.getElementById("content1").style.display = "none";
+      document.getElementById("navbar").style.display = "none";
+      document.getElementById("showContent").style.display = "block";
+
+      var desc = document.createElement('h1');
+      desc.innerHTML = blogcontent;
+      blogContent.appendChild(desc);
     }
 
 

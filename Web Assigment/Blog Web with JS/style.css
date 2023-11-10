@@ -169,7 +169,7 @@ nav button:hover{
 }
 
 .blogCont{
-  display: none;
+  display: block;
   width:100%;
   height:100vh;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
