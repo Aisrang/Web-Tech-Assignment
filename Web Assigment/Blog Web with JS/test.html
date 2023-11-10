@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Button with Type Example</title>
+</head>
+<body>
+
+<script>
+    // Create a button element
+    var myButton = document.createElement("button");
+
+    // Set button text
+    myButton.innerHTML = "Click me";
+
+    // Set button type
+    myButton.type = "button"; // You can use "submit" or "reset" as well
+
+    // Define the onclick function
+    function handleClick() {
+        alert("Button clicked!");
+    }
+
+    // Attach the onclick event listener to the button
+    myButton.onclick = handleClick;
+
+    // Append the button to the body or any other desired element
+    document.body.appendChild(myButton);
+</script>
+
+</body>
+</html>
