@@ -2,12 +2,14 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blogs :&#92;</title>
+  <title>Blog Dekho Bhai</title>
 
   <link rel="stylesheet" href="style.css">
+  <script src="work.js"></script>
 
 </head>
 
@@ -25,164 +27,68 @@
 
   </nav>
 
-  <!-- Main Content -->
-
-  <div class="content" id="content1">
+  <div class="cont" id="contId">
 
     <div class="sub-cont">
       <h2>HTML</h2>
-      <p>The language used to define the structure of webpage.</p>
-      <a href="#">Read More...</a>
-    </div>
+      <p>The HyperText Markup Language or HTML is the standard markup language for documents designed to be displayed in
+        a web browser. It defines the meaning and structure of web content. It is often assisted by technologies such as
+        Cascading Style Sheets (CSS) and scripting languages such as JavaScript.<br>
 
-    <div class="sub-cont">
-      <h2>CSS</h2>
-      <p>The language used to style and design the webpage.</p>
-      <a href="#">Read More...</a>
-    </div>
+        Web browsers receive HTML documents from a web server or from local storage and render the documents into
+        multimedia web pages. HTML describes the structure of a web page semantically and originally included cues for
+        its appearance.</p>
 
-    <div class="sub-cont">
-      <h2>CSS</h2>
-      <p>The language used to style and design the webpage.</p>
-      <a href="#">Read More...</a>
-    </div>
-
-    <div class="sub-cont">
-      <h2>CSS</h2>
-      <p>The language used to style and design the webpage.</p>
-      <a href="#">Read More...</a>
-    </div>
-
-  </div>
-
-
-
-  <!-- Pop Up Modal -->
-
-  <div class="overlay" id="overlay1">
-    <div class="popup">
-
-      <form action="#" class="pop-form">
-
-        <h2 style="margin:20px;text-align:center;font-size:30px;"><u>WRITE YOUR OWN BLOG HERE</u></h2>
-
-        <div>
-          <h3>Blog Title</h3>
-          <input type="text" id="title" placeholder="Enter the title of blog..." maxlength="50">
-        </div>
-
-        <div>
-          <h3>Blog Subtitle</h3>
-          <input type="text" id="subtitle" placeholder="Type a short intro..." maxlength="80">
-        </div>
-
-        <div>
-          <h3>Blog Content</h3>
-          <textarea id="blogcontent" placeholder="Type the main content of blog" rows="10" cols="50"></textarea>
-        </div>
-
-        <div class="confirm">
-          <button type="submit" onclick="takeValue(),display()">UPLOAD</button>
-          <button type="button" onclick="closePopup()">CLOSE</button>
-        </div>
-
-      </form>
-
-    </div>
-
-  </div>
-
-
-  <!-- Blog content modal -->
-
-  <div class="blogCont" id="blogContent">
-    <div class="blogCont1">
-      <h1></h1>
-      <hr>
-      <br>
-      <p></p>
-    </div>
-
-    <div class="blogComs">
-
-      <input type="text" id="comment" placeholder="Type to comment on this blog">
-      <button type="button" onclick="commentIt()">Send</button>
-
-    </div>
-
-    <div class="comment">
-      <div class="comment1">
-        <p></p>
+      <div class="sub-comment">
+        <textarea id="comment" placeholder="Add a comment here"></textarea>
+        <button type="button" onclick="commentIt(this)" id="sendcom">Send</button>
       </div>
+
     </div>
-  </div>
+
+    <div class="sub-cont">
+      <h2>CSS</h2>
+      <p>Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document
+        written in a markup language such as HTML or XML (including XML dialects such as SVG, MathML or XHTML).[1] CSS
+        is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.<br>
+
+        [2]CSS is designed to enable the separation of content and presentation, including layout, colors, and fonts.[3]
+        This separation can improve content accessibility; provide more flexibility and control in the specification of
+        presentation characteristics.</p>
+
+      <div class="sub-comment">
+        <textarea id="comment" placeholder="Add a comment here"></textarea>
+        <button type="button" onclick="commentIt(this)" id="sendcom">Send</button>
+      </div>
+
+    </div>
 
 
-  <!-- Scripting.... -->
 
-  <script>
+    <!-- Pop Up form -->
 
-    //Functions for PopUp model
+    <div class="overlay" id="overlayId">
+      <div class="inputs">
+        <form>
+          <div style="padding-bottom:20px;">
+            <h3>Title</h3>
+            <input type="text" id="title" placeholder="Enter the blog title">
+          </div>
 
-    function openPopup() {
-      document.getElementById("overlay1").style.display = "flex";
-    }
+          <div style="padding-bottom:20px;">
+            <h3>Blog Content</h3>
+            <textarea id="blogCont" placeholder="Enter the main content"></textarea>
+          </div>
+        </form>
 
-    function closePopup() {
-      document.getElementById("overlay1").style.display = "none";
-    }
+        <div class="inputs-btn">
+          <button type="button" onclick="addBlog()">Submit</button>
+          <button type="button" onclick="closePopup()">Close</button>
+          </inputs-btn>
+        </div>
+      </div>
 
-    //Functions for posting blogs
-
-    var title;
-    var subtitle;
-    var blogcontent;
-    var cardlink;
-
-    var newDiv = document.createElement('div');
-    var newHead = document.createElement('h2');
-    var newPara = document.createElement('p');
-    var newLink = document.createElement('button');
-
-    function takeValue() {
-      title = document.getElementById("title").value;
-      subtitle = document.getElementById("subtitle").value;
-      blogcontent = document.getElementById("blogcontent").value;
-    }
-
-    function display() {
-
-      newDiv.classList.add('sub-cont')
-
-      newHead.innerHTML = title;
-      newPara.innerHTML = subtitle;
-      newLink.innerHTML = 'Read More...';
-
-      newLink.type = "button";
-      newLink.onclick = showContent();
-
-      newDiv.appendChild(newHead);
-      newDiv.appendChild(newPara);
-      newDiv.appendChild(newLink);
-
-      content1.appendChild(newDiv);
-
-      form.reset();
-    }
-
-    function showContent() {
-      document.getElementById("content1").style.display = "none";
-      document.getElementById("navbar").style.display = "none";
-      document.getElementById("showContent").style.display = "block";
-
-      var desc = document.createElement('h1');
-      desc.innerHTML = blogcontent;
-      blogContent.appendChild(desc);
-    }
-
-
-  </script>
-
+    </div>
 
 </body>
 

@@ -5,11 +5,12 @@ body {
   height: 100%;
   width: 100%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #282a35;
 }
 
 nav {
   display: flex;
-  background-color: #282a35;
+  background-color: bisque;
 }
 
 nav ul {
@@ -26,223 +27,159 @@ nav a {
   font-size: 25px;
   text-decoration: none;
   font-weight: bold;
-  color: bisque;
+  color: #282a35;
 }
 
 nav a:hover {
-  color: rgb(220, 197, 169)
+  color: #5d6278;
 }
 
 nav button {
   font-size: 25px;
   text-decoration: none;
   font-weight: bold;
-  color: bisque;
-  border:none;
-  background-color: #282a35;
+  color: #282a35;
+  border: none;
+  background-color: bisque;
 }
 
-nav button:hover{
-  color: rgb(220, 197, 169);
-  cursor:pointer;
+nav button:hover {
+  color: #5d6278;
+  cursor: pointer;
 }
 
-.content {
-  padding-top:100px;
-  padding-bottom:100px;
+.cont {
+  padding-top: 100px;
   display: grid;
   grid-template-columns: auto auto;
+  color: bisque;
   column-gap: 100px;
   row-gap: 100px;
-  width: 100%;
-  height: auto;
-  background-color: bisque;
-  color: #282a35;
-  align-items: center;
   justify-content: center;
 }
 
 .sub-cont {
   display: flex;
-  width: 566.38px;
-  border: 1px solid black;
   flex-direction: column;
-  padding: 50px;
-  border-radius: 5px;
+  width: 800px;
+  align-items: center;
   gap: 20px;
+  border: 1px solid bisque;
+  padding: 20px;
+  border-radius: 15px;
 }
 
-.sub-cont h2{
+.sub-cont h2 {
   font-size: 35px;
-  margin: 0;
 }
 
 .sub-cont p {
   font-size: 20px;
 }
 
-.sub-cont a {
-  width: 100px;
-  font-size: 18px;
-  border: none;
-  background-color: #323542;
-  color: white;
-  border-radius: 25px;
+.sub-comment {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.sub-comment textarea {
+  width: 300px;
   padding: 10px 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  text-decoration: none;
+  background-color: rgb(248, 230, 208);
 }
 
-.sub-cont a:hover {
-  background-color: #404455;
-}
-
-.overlay{
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  align-items: center;
-  justify-content: center;
-}
-
-.popup{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: aliceblue;
-  border-radius: 10px;
-}
-
-.pop-form{
-  border:1px solid black;
-  display: flex;
-  flex-direction: column;
-  padding:20px;
-  border-radius: 10px;
-}
-
-.pop-form h3{
-  font-size: 20px;
-}
-
-.pop-form input{
-  width:94%;
-  padding:10px;
-  border-radius: 5px;
-  border: 0.5px solid black;
-}
-
-.pop-form ::placeholder{
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 15px;
-}
-
-.pop-form textarea{
-  border-radius: 5px;
-  width: 94%;
-  padding:10px;
-  font-size: 15px;
-}
-
-.confirm{
-  width: 100%;
-  text-align: center;
-  margin-top: 30px;
-}
-
-.confirm button{
-  border:none;
-  border-radius: 25px;
-  padding:10px 20px;
-  background-color: #282a35;
-  color:white;
-}
-
-.confirm button:hover{
-  background-color: #3b3e4e;
-  cursor: pointer;
-}
-
-.blogCont{
-  display: block;
-  width:100%;
-  height:100vh;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: bisque;
-  z-index:2;
-  position: fixed;
-}
-
-.blogCont h1{
-  font-size: 50px;
-  text-align: center;
-}
-
-.blogCont p{
-  font-size: 20px;
-}
-
-.blogComs{
-  text-align: center;
-}
-
-.blogComs input{
-  padding:10px 20px;
-  width:240px;
-}
-
-.blogComs input::placeholder{
+.sub-comment textarea::placeholder {
   font-size: 15px;
   font-weight: bold;
 }
 
-.blogComs button {
-  font-size:18px;
-  background-color: #282a35;
-  color:white;
-  border-radius:25px;
-  padding: 8px 18px;
-}
-
-.blogComs button:hover{
-  background-color: #363948;
-  cursor:pointer;
-}
-
-/* For newly added blogs */
-
-.sub-cont button {
-  width: 140px;
-  font-size: 15px;
-  border: none;
-  background-color: #323542;
-  color: white;
-  border-radius: 25px;
+.sub-comment button {
+  background: none;
+  background-color: rgb(248, 230, 208);
   padding: 10px 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  text-decoration: none;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: bold;
 }
 
-.sub-cont button:hover {
-  background-color: #404455;
+.sub-comment button:hover {
+  background-color: rgb(241, 212, 175);
   cursor: pointer;
 }
 
-.comment{
-  margin-top: 50px;
-  display: flex;
-  justify-content:center ;
-  width:100%;
+.commented{
+  width: 400px;
+  background-color: rgb(247, 203, 150);
+  color:black;
+  padding: 5px;
   word-wrap: break-word;
+  margin-bottom: 20px;
+  border-radius: 15px;
 }
 
-.comment1{
-  gap:20px;
-  width: 500px;
-  background-color: rgb(248, 209, 162);
+
+/* Styling for Pop Up */
+
+.overlay {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 1.5px;
+  z-index: 1;
+  position: fixed;
+  top:0;
+  left:0;
+}
+
+.inputs {
+  background-color: bisque;
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.inputs h3 {
+  margin: 0;
+  font-size: 35px;
+}
+
+.inputs input {
+  width: 300px;
+  padding: 10px 20px;
+}
+
+.inputs textarea {
+  width: 300px;
+  padding: 10px 20px;
+  margin-top: 10px;
+}
+
+.inputs ::placeholder {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.inputs-btn{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.inputs-btn button{
+  border: none;
+  background-color: #282a35;
+  color:white;
+  font-size: 15px;
+  font-weight: bold;
+  width: 100px;
+  padding:10px 20px;
+  border-radius: 25px;
+}
+
+.inputs-btn button:hover{
+  cursor: pointer;
+  background-color: #3f4251;
 }
